@@ -1,0 +1,27 @@
+{
+    "version": "1.0.0",
+    "summary": "Styling your Html elements with typed CSS in Elm",
+    "repository": "https://github.com/user/project.git",
+    "license": "MIT",
+    "source-directories": [
+        "src"
+    ],
+    "native-modules": true,
+    "exposed-modules": [
+        "Styled",
+        "Styled.Colors",
+        "Styled.Cursors",
+        "Styled.FontVariant",
+        "Styled.ListStyle",
+        "Styled.Timing",
+        "Styled.Transform",
+        "Styled.Types"
+    ],
+    "dependencies": {
+        "Skinney/murmur3": "2.0.4 <= v < 3.0.0",
+        "elm-lang/core": "5.1.1 <= v < 6.0.0",
+        "elm-lang/html": "2.0.0 <= v < 3.0.0",
+        "elm-lang/virtual-dom": "2.0.4 <= v < 3.0.0"
+    },
+    "elm-version": "0.18.0 <= v < 0.19.0"
+}
