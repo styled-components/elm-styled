@@ -23,6 +23,7 @@ module Styled
         , backgroundImage
         , backgroundOrigin
         , backgroundPosition
+        , backgroundPosition2
         , backgroundRepeat
         , backgroundRepeat2
         , backgroundSize
@@ -437,7 +438,7 @@ module Styled
 @docs animation, animationDelay, animationDirection, animationDuration, animationFillMode, animationIterationCount, animationName, animationPlayState, animationTimingFunction
 
 ## Background Properties
-@docs background, backgroundAttachment, backgroundClip, backgroundColor, backgroundImage, backgroundOrigin, backgroundPosition, backgroundRepeat, backgroundRepeat2, backgroundSize, backgroundSize2
+@docs background, backgroundAttachment, backgroundClip, backgroundColor, backgroundImage, backgroundOrigin, backgroundPosition, backgroundPosition2, backgroundRepeat, backgroundRepeat2, backgroundSize, backgroundSize2
 
 ## Border Properties
 @docs border, borderBottom, borderBottomColor, borderBottomLeftRadius, borderBottomRightRadius, borderBottomStyle, borderBottomWidth, borderColor, borderImage, borderImageOutset, borderImageOutset2, borderImageOutset3, borderImageOutset4, borderImageRepeat, borderImageRepeat2, borderImageSlice, borderImageSlice2, borderImageSlice3, borderImageSlice4, borderImageSource, borderImageWidth, borderImageWidth2, borderImageWidth3, borderImageWidth4, borderLeft, borderLeftColor, borderLeftStyle, borderLeftWidth, borderRadius, borderRight, borderRightColor, borderRightStyle, borderRightWidth, borderStyle, borderTop, borderTopColor, borderTopLeftRadius, borderTopRightRadius, borderTopStyle, borderTopWidth, borderWidth
@@ -1106,9 +1107,21 @@ backgroundOrigin =
     backgroundPosition (percent 50)
 
 -}
-backgroundPosition : Position compatible -> Rule
+backgroundPosition : PositionShorthand compatible -> Rule
 backgroundPosition =
     decl1 "background-position"
+
+
+{-| Defines the origin of a background image. [`background-position`](https://developer.mozilla.org/en-US/docs/Web/CSS/background-position)
+
+    backgroundPosition2 (px 100) (rem 10)
+    backgroundPosition2 (rem 1) zero
+    backgroundPosition2 (percent 50) (em 30)
+
+-}
+backgroundPosition2 : Position compatibleA -> Position compatibleB -> Rule
+backgroundPosition2 =
+    decl2 "background-position"
 
 
 {-| Specify whether/how the background image is tiled. [`background-repeat`](https://developer.mozilla.org/en-US/docs/Web/CSS/background-repeat)
@@ -3126,14 +3139,15 @@ transforms values =
 
 {-| Defines the origin of transformation for an element. [`transform-origin`](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-origin)
 
-    transformOrigin <x-offset>
+    transformOrigin center
+    transformOrigin left_
 
     transformOrigin (px 10)
     transformOrigin (rem 1)
     transformOrigin (percent 50)
 
 -}
-transformOrigin : Length_Percentage compatible -> Rule
+transformOrigin : PositionShorthand compatible -> Rule
 transformOrigin =
     decl1 "transform-origin"
 
@@ -3148,8 +3162,8 @@ transformOrigin =
 
 -}
 transformOrigin2 :
-    Length_Percentage compatibleA
-    -> Length_Percentage compatibleB
+    Position compatibleA
+    -> Position compatibleB
     -> Rule
 transformOrigin2 =
     decl2 "transform-origin"
@@ -3718,8 +3732,9 @@ createLength unit value =
     { value = ((toString value) ++ unit)
     , length = Compatible
     , position = Compatible
-    , backgroundSizeShorthand = Compatible
+    , positionShorthand = Compatible
     , backgroundSize = Compatible
+    , backgroundSizeShorthand = Compatible
     , borderImageWidth = Compatible
     , verticalAlign = Compatible
     , auto_length_percentage = Compatible
@@ -3843,8 +3858,9 @@ percent value =
     { value = (toString value) ++ "%"
     , percentage = Compatible
     , position = Compatible
-    , backgroundSizeShorthand = Compatible
+    , positionShorthand = Compatible
     , backgroundSize = Compatible
+    , backgroundSizeShorthand = Compatible
     , borderImageSlice = Compatible
     , borderImageWidth = Compatible
     , verticalAlign = Compatible
@@ -4082,7 +4098,7 @@ bottom_ : Bottom_ {}
 bottom_ =
     { value = "bottom"
     , bottom_ = Compatible
-    , position = Compatible
+    , positionShorthand = Compatible
     , captionSide = Compatible
     , verticalAlign = Compatible
     }
@@ -4119,7 +4135,7 @@ center : Center {}
 center =
     { value = "center"
     , center = Compatible
-    , position = Compatible
+    , positionShorthand = Compatible
     , alignContent = Compatible
     , alignItems = Compatible
     , justifyContent = Compatible
@@ -4411,7 +4427,7 @@ left_ : Left_ {}
 left_ =
     { value = "left"
     , left_ = Compatible
-    , position = Compatible
+    , positionShorthand = Compatible
     , pageBreak = Compatible
     , textAlign = Compatible
     , textAlignLast = Compatible
@@ -4648,7 +4664,7 @@ right_ : Right_ {}
 right_ =
     { value = "right"
     , right_ = Compatible
-    , position = Compatible
+    , positionShorthand = Compatible
     , pageBreak = Compatible
     , textAlign = Compatible
     , textAlignLast = Compatible
@@ -4864,7 +4880,7 @@ top_ : Top_ {}
 top_ =
     { value = "top"
     , top_ = Compatible
-    , position = Compatible
+    , positionShorthand = Compatible
     , captionSide = Compatible
     , verticalAlign = Compatible
     }

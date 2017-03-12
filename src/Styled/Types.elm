@@ -52,7 +52,7 @@ These types are used internally to choose which value is compatible with which p
 @docs All_, Auto, Baseline, BorderBox, Both, Bottom_, Center, Collapse, ContentBox, Dashed, Dotted, Double, End, Fixed, FlexStart, FlexEnd, Hidden, Justify, Left_, None, Normal, Nowrap, PaddingBox, Repeat, Right_, Round, Scroll, Solid, Space, SpaceBetween, SpaceAround, SpaceEvenly, Start, StepsDirection, Stretch, Top_, Visible
 
 # CSS Data Types
-@docs Angle, Color, Image, Integer, Length, Number, Percentage, Position, Str, Time, TimingFunction, TransformFunction, Url
+@docs Angle, Color, Gradient, Image, Integer, Length, Number, Percentage, Position, PositionShorthand, Str, Time, TimingFunction, TransformFunction, Url
 
 ## Combined Types
 @docs Auto_Length_Percentage, Length_Percentage, Length_Number, Length_Number_Percentage, Number_Percentage
@@ -110,6 +110,16 @@ type alias Color compatible =
     }
 
 
+{-| Represents the CSS data type [`<gradient>`](https://developer.mozilla.org/en-US/docs/Web/CSS/gradient).
+-}
+type alias Gradient compatible =
+    { compatible
+        | value : String
+        , gradient : Compatible
+        , image : Compatible
+    }
+
+
 {-| Represents the CSS data type [`<image>`](https://developer.mozilla.org/en-US/docs/Web/CSS/image).
 -}
 type alias Image compatible =
@@ -135,8 +145,9 @@ type alias Length compatible =
         | value : String
         , length : Compatible
         , position : Compatible
-        , backgroundSizeShorthand : Compatible
+        , positionShorthand : Compatible
         , backgroundSize : Compatible
+        , backgroundSizeShorthand : Compatible
         , borderImageWidth : Compatible
         , verticalAlign : Compatible
         , auto_length_percentage : Compatible
@@ -168,8 +179,9 @@ type alias Percentage compatible =
         | value : String
         , percentage : Compatible
         , position : Compatible
-        , backgroundSizeShorthand : Compatible
+        , positionShorthand : Compatible
         , backgroundSize : Compatible
+        , backgroundSizeShorthand : Compatible
         , borderImageSlice : Compatible
         , borderImageWidth : Compatible
         , verticalAlign : Compatible
@@ -185,6 +197,19 @@ type alias Percentage compatible =
     type Position
         = Length
         | Percentage
+
+-}
+type alias Position compatible =
+    { compatible
+        | value : String
+        , position : Compatible
+    }
+
+
+{-| Represents the CSS data type [`<position>`](https://developer.mozilla.org/en-US/docs/Web/CSS/position).
+
+    type PositionShorthand
+        = Position
         | Center
         | Bottom_
         | Top_
@@ -192,10 +217,10 @@ type alias Percentage compatible =
         | Right_
 
 -}
-type alias Position compatible =
+type alias PositionShorthand compatible =
     { compatible
         | value : String
-        , position : Compatible
+        , positionShorthand : Compatible
     }
 
 
@@ -444,6 +469,7 @@ type alias BackgroundRepeat compatible =
 {-|
     type BackgroundSizeShorthand
         = BackgroundSizeShorthand
+        | BackgroundSize
         | Length
         | Percentage
 -}
@@ -1200,7 +1226,7 @@ type alias Bottom_ compatible =
     { compatible
         | value : String
         , bottom_ : Compatible
-        , position : Compatible
+        , positionShorthand : Compatible
         , captionSide : Compatible
         , verticalAlign : Compatible
     }
@@ -1211,7 +1237,7 @@ type alias Center compatible =
     { compatible
         | value : String
         , center : Compatible
-        , position : Compatible
+        , positionShorthand : Compatible
         , alignContent : Compatible
         , alignItems : Compatible
         , justifyContent : Compatible
@@ -1341,7 +1367,7 @@ type alias Left_ compatible =
     { compatible
         | value : String
         , left_ : Compatible
-        , position : Compatible
+        , positionShorthand : Compatible
         , pageBreak : Compatible
         , textAlign : Compatible
         , textAlignLast : Compatible
@@ -1425,7 +1451,7 @@ type alias Right_ compatible =
     { compatible
         | value : String
         , right_ : Compatible
-        , position : Compatible
+        , positionShorthand : Compatible
         , pageBreak : Compatible
         , textAlign : Compatible
         , textAlignLast : Compatible
@@ -1544,7 +1570,7 @@ type alias Top_ compatible =
     { compatible
         | value : String
         , top_ : Compatible
-        , position : Compatible
+        , positionShorthand : Compatible
         , captionSide : Compatible
         , verticalAlign : Compatible
     }
