@@ -16,11 +16,11 @@ var _user$project$Native_Css = function () {
 
 	var injected = {}
 
-	function inject( className, css ) {
-		if (!injected[className]) {
-			injected[className] = true
+	function inject( hash, rule ) {
+		if (!injected[hash]) {
+			injected[hash] = true
 
-			sheet.insertRule(css, sheet.cssRules.length)
+			sheet.insertRule(rule, sheet.cssRules.length)
 		}
 	}
 

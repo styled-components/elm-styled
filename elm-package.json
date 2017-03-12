@@ -12,6 +12,7 @@
         "Styled.Colors",
         "Styled.Cursors",
         "Styled.FontVariant",
+        "Styled.Keyframes",
         "Styled.ListStyle",
         "Styled.Timing",
         "Styled.Transform",

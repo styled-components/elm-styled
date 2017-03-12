@@ -631,34 +631,16 @@ module Styled
 
 -}
 
-import Murmur3
 import Html.Attributes
 import VirtualDom exposing (Node, Property)
 import Styled.Types exposing (..)
 import Native.Css
+import Internal exposing (createHash, concatDeclaration)
 
 
 {-------------------------------------------------------------------------------
    Misc
 -------------------------------------------------------------------------------}
-
-
-createClassName : List Rule -> String
-createClassName =
-    toString
-        >> Murmur3.hashString 571130
-        >> toString
-        >> String.append "s"
-
-
-concatDeclaration : Rule -> String
-concatDeclaration rule =
-    case rule of
-        Declaration property values ->
-            property ++ ": " ++ (String.join " " values) ++ ";"
-
-        ImportantDeclaration property values ->
-            property ++ ": " ++ (String.join " " values) ++ " !important;"
 
 
 createCss : String -> List Rule -> String
@@ -695,7 +677,7 @@ styled node rules properties children =
     {- We need to use 2 let blocks because the inner styles needs to be created first so the outer styles can override them. -}
     let
         className =
-            createClassName rules
+            createHash rules
 
         classNameProperty =
             Html.Attributes.class className
@@ -981,7 +963,19 @@ animationIterationCount =
 
 {-| Specifies the name of @keyframes defined animations that should be applied to the selected element. [`animation-name`](https://developer.mozilla.org/en-US/docs/Web/CSS/animation-name)
 
-    -- Todo
+    spin =
+        keyframes
+            [ ( 0
+              , [ transform (rotate (deg 0))
+                ]
+              )
+            , ( 100
+              , [ transform (rotate (deg 360))
+                ]
+              )
+            ]
+
+    animationName = spin
 
 -}
 animationName : Keyframes compatible -> Rule
