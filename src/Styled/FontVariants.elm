@@ -1,4 +1,4 @@
-module Styled.FontVariant exposing (..)
+module Styled.FontVariants exposing (..)
 
 {-|
 

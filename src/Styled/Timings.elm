@@ -1,4 +1,4 @@
-module Styled.Timing
+module Styled.Timings
     exposing
         ( linear
         , ease

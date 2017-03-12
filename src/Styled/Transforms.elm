@@ -1,4 +1,4 @@
-module Styled.Transform
+module Styled.Transforms
     exposing
         ( matrix
         , matrix3d

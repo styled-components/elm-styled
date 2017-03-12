@@ -11,12 +11,12 @@
         "Styled",
         "Styled.Colors",
         "Styled.Cursors",
-        "Styled.FontVariant",
-        "Styled.Gradient",
+        "Styled.FontVariants",
+        "Styled.Gradients",
         "Styled.Keyframes",
-        "Styled.ListStyle",
-        "Styled.Timing",
-        "Styled.Transform",
+        "Styled.ListStyles",
+        "Styled.Timings",
+        "Styled.Transforms",
         "Styled.Types"
     ],
     "dependencies": {

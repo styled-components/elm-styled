@@ -1,4 +1,4 @@
-module Styled.Gradient exposing (..)
+module Styled.Gradients exposing (..)
 
 {-|
 

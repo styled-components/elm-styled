@@ -1,4 +1,4 @@
-module Styled.ListStyle exposing (..)
+module Styled.ListStyles exposing (..)
 
 {-|
 
