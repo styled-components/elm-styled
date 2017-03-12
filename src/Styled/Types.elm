@@ -61,9 +61,9 @@ These types are used internally to choose which value is compatible with which p
 @docs Compatible, Rule, Keyframes
 -}
 
-{-------------------------------------------------------------------------------
-    Misc
--------------------------------------------------------------------------------}
+{-
+   Misc
+-}
 
 
 {-| This type is used to check if a type is compatible to another type.
@@ -87,9 +87,9 @@ type alias Keyframes compatible =
 
 
 
-{-------------------------------------------------------------------------------
+{-
    CSS Data Types
--------------------------------------------------------------------------------}
+-}
 
 
 {-| Represents the CSS data type [`<angle>`](https://developer.mozilla.org/en-US/docs/Web/CSS/angle).
@@ -321,9 +321,9 @@ type alias Number_Percentage compatible =
 
 
 
-{-------------------------------------------------------------------------------
-    Property Types
--------------------------------------------------------------------------------}
+{-
+   Property Types
+-}
 -- Animation Properties
 
 
@@ -1129,9 +1129,9 @@ type alias BoxSizing compatible =
 
 
 
-{-------------------------------------------------------------------------------
-    Value Types
--------------------------------------------------------------------------------}
+{-
+   Value Types
+-}
 
 
 {-| -}
