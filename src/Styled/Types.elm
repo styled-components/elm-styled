@@ -49,7 +49,7 @@ These types are used internally to choose which value is compatible with which p
 @docs Display, Position_, Float_, Clear, Overflow, Resize, Visibility, Cursor, BoxSizing
 
 # Value Types
-@docs All_, Auto, Baseline, BorderBox, Both, Bottom_, Center, Collapse, ContentBox, Dashed, Dotted, Double, End, Fixed, FlexStart, FlexEnd, Hidden, Justify, Left_, None, Normal, Nowrap, PaddingBox, Repeat, Right_, Round, Scroll, Solid, Space, SpaceBetween, SpaceAround, SpaceEvenly, Start, StepsDirection, Stretch, Top_, Visible
+@docs All_, Auto, Baseline, BorderBox, Both, Bottom_, Center, Collapse, ColorStop, ContentBox, Dashed, Dotted, Double, End, Fixed, FlexStart, FlexEnd, Hidden, Justify, Left_, None, Normal, Nowrap, PaddingBox, Repeat, Right_, Round, Scroll, Shape, Solid, Space, SpaceBetween, SpaceAround, SpaceEvenly, Start, StepsDirection, Stretch, Top_, Visible
 
 # CSS Data Types
 @docs Angle, Color, Gradient, Image, Integer, Length, Number, Percentage, Position, PositionShorthand, Str, Time, TimingFunction, TransformFunction, Url
@@ -1257,6 +1257,14 @@ type alias Collapse compatible =
 
 
 {-| -}
+type alias ColorStop compatible =
+    { compatible
+        | value : String
+        , colorStop : Compatible
+    }
+
+
+{-| -}
 type alias ContentBox compatible =
     { compatible
         | value : String
@@ -1478,6 +1486,14 @@ type alias Scroll compatible =
         , scroll : Compatible
         , backgroundAttachment : Compatible
         , overflow : Compatible
+    }
+
+
+{-| -}
+type alias Shape compatible =
+    { compatible
+        | value : String
+        , shape : Compatible
     }
 
 
