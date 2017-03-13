@@ -1,7 +1,7 @@
 {
     "version": "1.0.0",
     "summary": "Styling your Html elements with typed CSS in Elm",
-    "repository": "https://github.com/user/project.git",
+    "repository": "https://github.com/styled-components/elm-styled.git",
     "license": "MIT",
     "source-directories": [
         "src"

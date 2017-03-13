@@ -1,6 +1,6 @@
 // import Native.Utils //
 
-var _user$project$Native_Css = function () {
+var _styled_components$elm_styled$Native_Css = function () {
 	var sheet = (function () {
 		// Create the <style> tag
 		var style = document.createElement('style')
