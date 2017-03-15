@@ -4,6 +4,7 @@ module Styled
           -- Misc
         , styled
         , media
+        , mixin
         , important
           -- Properties
           -- Animation Properties
@@ -430,7 +431,7 @@ module Styled
 {-|
 
 # Misc
-@docs styled, media, important
+@docs styled, media, mixin, important
 
 
 # Properties
@@ -694,6 +695,25 @@ media =
     Media
 
 
+{-| A mixin allows you to reuse common styles. The return value of a mixin can be used like any other style.
+
+    paddingAndMargin length =
+        mixin
+            [ padding length
+            , margin length
+            ]
+
+    header =
+        styled div
+            [ paddingAndMargin (rem 10)
+            ]
+
+-}
+mixin : List Rule -> Rule
+mixin =
+    Mixin
+
+
 {-| Append `!important` to a declaration. You should only use important in special cases.
 
     borderColor black |> important
@@ -710,6 +730,9 @@ important rule =
 
         Media query rules ->
             Media query (List.map important rules)
+
+        Mixin rules ->
+            Mixin (List.map important rules)
 
 
 

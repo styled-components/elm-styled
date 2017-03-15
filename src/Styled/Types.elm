@@ -77,6 +77,7 @@ type Rule
     = Declaration String (List String) Bool
     | Selector String (List Rule)
     | Media String (List Rule)
+    | Mixin (List Rule)
 
 
 {-| -}

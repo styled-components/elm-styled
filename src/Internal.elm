@@ -49,15 +49,16 @@ concatDeclaration rule =
             ""
 
 
-concatOtherRule : String -> Rule -> String
+concatOtherRule : String -> Rule -> List String
 concatOtherRule parentSelector rule =
     case rule of
         Declaration _ _ _ ->
-            ""
+            List.singleton ""
 
         Selector selector rules ->
             createCss (parentSelector ++ selector) rules
                 |> String.join " "
+                |> List.singleton
 
         Media query rules ->
             createCss (parentSelector) rules
@@ -69,6 +70,10 @@ concatOtherRule parentSelector rule =
                             ++ css
                             ++ " } "
                    )
+                |> List.singleton
+
+        Mixin rules ->
+            createCss parentSelector rules
 
 
 createCss : String -> List Rule -> List String
@@ -88,6 +93,6 @@ createCss selector rules =
                    )
 
         otherRulesCss =
-            List.map (concatOtherRule selector) otherRules
+            List.concatMap (concatOtherRule selector) otherRules
     in
         declarationsCss :: otherRulesCss
