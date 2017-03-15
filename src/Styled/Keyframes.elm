@@ -11,16 +11,20 @@ If you want to do custom animations you should use the keyframes function and us
 
 -}
 
-import Internal exposing (createHash, concatDeclaration)
-import Native.Css
+import Internal
 import Styled.Types exposing (..)
 
 
 createKeyframeStep : ( Int, List Rule ) -> String
 createKeyframeStep ( step, rules ) =
-    List.map concatDeclaration rules
+    List.map Internal.concatDeclaration rules
         |> String.join " "
-        |> (\cssRules -> (toString step) ++ "% {" ++ cssRules ++ "}")
+        |> (\cssRules ->
+                (toString step)
+                    ++ "% { "
+                    ++ cssRules
+                    ++ " } "
+           )
 
 
 {-|
@@ -42,7 +46,7 @@ keyframes : List ( Int, List Rule ) -> Keyframes {}
 keyframes steps =
     let
         keyframesName =
-            createHash steps
+            Internal.createHash "keyframes" steps
 
         cssSteps =
             List.map createKeyframeStep steps
@@ -56,7 +60,7 @@ keyframes steps =
                 ++ " } "
 
         injectedCss =
-            Native.Css.inject keyframesName css
+            Internal.injectCss keyframesName [ css ]
     in
         { value = keyframesName
         , keyframes = Compatible

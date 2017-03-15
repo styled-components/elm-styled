@@ -291,15 +291,14 @@ farthestCorner shape =
     -> ( Position compatibleA, Position compatibleB )
     -> Shape {}
 (@) shape ( positionX, positionY ) =
-    Debug.log "at"
-        { value =
-            shape.value
-                ++ " at "
-                ++ positionX.value
-                ++ " "
-                ++ positionY.value
-        , shape = Compatible
-        }
+    { value =
+        shape.value
+            ++ " at "
+            ++ positionX.value
+            ++ " "
+            ++ positionY.value
+    , shape = Compatible
+    }
 
 
 

@@ -635,28 +635,12 @@ module Styled
 import Html.Attributes
 import VirtualDom exposing (Node, Property)
 import Styled.Types exposing (..)
-import Native.Css
-import Internal exposing (createHash, concatDeclaration)
+import Internal
 
 
 {-
    Misc
 -}
-
-
-createCss : String -> List Rule -> String
-createCss className rules =
-    let
-        css =
-            rules
-                |> List.map concatDeclaration
-                |> String.join "  "
-    in
-        "."
-            ++ className
-            ++ " { "
-            ++ css
-            ++ " }"
 
 
 {-|
@@ -678,7 +662,7 @@ styled node rules properties children =
     {- We need to use 2 let blocks because the inner styles needs to be created first so the outer styles can override them. -}
     let
         className =
-            createHash rules
+            Internal.createHash "class" rules
 
         classNameProperty =
             Html.Attributes.class className
@@ -688,10 +672,10 @@ styled node rules properties children =
     in
         let
             css =
-                createCss className rules
+                Internal.createCss ("." ++ className) rules
 
             injectedCss =
-                Native.Css.inject className css
+                Internal.injectCss className css
         in
             nodeWithClassName
 
@@ -704,10 +688,10 @@ styled node rules properties children =
 important : Rule -> Rule
 important rule =
     case rule of
-        Declaration property values ->
-            ImportantDeclaration property values
+        Declaration property values _ ->
+            Declaration property values True
 
-        ImportantDeclaration _ _ ->
+        _ ->
             rule
 
 
@@ -741,8 +725,8 @@ outputs
 
 -}
 declaration : String -> List String -> Rule
-declaration =
-    Declaration
+declaration property values =
+    Declaration property values False
 
 
 decl1 :

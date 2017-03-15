@@ -15,6 +15,7 @@
         "Styled.Gradients",
         "Styled.Keyframes",
         "Styled.ListStyles",
+        "Styled.Selectors",
         "Styled.Timings",
         "Styled.Transforms",
         "Styled.Types"

@@ -74,8 +74,8 @@ type Compatible
 
 {-| -}
 type Rule
-    = Declaration String (List String)
-    | ImportantDeclaration String (List String)
+    = Declaration String (List String) Bool
+    | Selector String (List Rule)
 
 
 {-| -}

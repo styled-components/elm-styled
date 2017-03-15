@@ -16,11 +16,13 @@ var _styled_components$elm_styled$Native_Css = function () {
 
 	var injected = {}
 
-	function inject( hash, rule ) {
+	function inject( hash, rules ) {
 		if (!injected[hash]) {
 			injected[hash] = true
 
-			sheet.insertRule(rule, sheet.cssRules.length)
+			rules.forEach(rule => {
+				sheet.insertRule(rule, sheet.cssRules.length)
+			})
 		}
 	}
 
