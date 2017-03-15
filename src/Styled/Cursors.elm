@@ -10,7 +10,7 @@ module Styled.Cursors exposing (..)
 import Styled.Types exposing (..)
 
 
-{-| The cursor indicates an alias of something is to be created.
+{-| <span style="cursor: alias;">The cursor indicates an alias of something is to be created.</span>
 
     cursor alias
 
@@ -22,7 +22,7 @@ alias =
     }
 
 
-{-| The cursor indicates that something can be scrolled in any direction.
+{-| <span style="cursor: all-scroll;">The cursor indicates that something can be scrolled in any direction.</span>
 
     cursor allScroll
 
@@ -34,7 +34,7 @@ allScroll =
     }
 
 
-{-| The cursor indicates that a cell (or set of cells) may be selected.
+{-| <span style="cursor: cell;">The cursor indicates that a cell (or set of cells) may be selected.</span>
 
     cursor cell
 
@@ -46,7 +46,7 @@ cell =
     }
 
 
-{-| The cursor indicates that a context-menu is available.
+{-| <span style="cursor: context-menu;">The cursor indicates that a context-menu is available.</span>
 
     cursor contextMenu
 
@@ -58,7 +58,7 @@ contextMenu =
     }
 
 
-{-| The cursor indicates that the column can be resized horizontally.
+{-| <span style="cursor: col-resize;">The cursor indicates that the column can be resized horizontally.</span>
 
     cursor colResize
 
@@ -70,7 +70,7 @@ colResize =
     }
 
 
-{-| The cursor indicates something is to be copied.
+{-| <span style="cursor: copy;">The cursor indicates something is to be copied.</span>
 
     cursor copy
 
@@ -82,7 +82,7 @@ copy =
     }
 
 
-{-| The cursor render as a crosshair.
+{-| <span style="cursor: crosshair;">The cursor render as a crosshair.</span>
 
     cursor crosshair
 
@@ -94,7 +94,7 @@ crosshair =
     }
 
 
-{-| The default cursor.
+{-| <span style="cursor: default;">The default cursor.</span>
 
     cursor default
 
@@ -106,7 +106,7 @@ default =
     }
 
 
-{-| The cursor indicates that an edge of a box is to be moved right (east).
+{-| <span style="cursor: e-resize;">The cursor indicates that an edge of a box is to be moved right (east).</span>
 
     cursor eResize
 
@@ -118,7 +118,7 @@ eResize =
     }
 
 
-{-| Indicates a bidirectional resize cursor.
+{-| <span style="cursor: ew-resize;">Indicates a bidirectional resize cursor.</span>
 
     cursor ewResize
 
@@ -130,7 +130,7 @@ ewResize =
     }
 
 
-{-| The cursor indicates that something can be grabbed.
+{-| <span style="cursor: grab;">The cursor indicates that something can be grabbed.</span>
 
     cursor grab
 
@@ -142,7 +142,7 @@ grab =
     }
 
 
-{-| The cursor indicates that something can be grabbed.
+{-| <span style="cursor: grabbing;">The cursor indicates that something can be grabbed.</span>
 
     cursor grabbing
 
@@ -154,7 +154,7 @@ grabbing =
     }
 
 
-{-| The cursor indicates that help is available.
+{-| <span style="cursor: help;">The cursor indicates that help is available.</span>
 
     cursor help
 
@@ -166,7 +166,7 @@ help =
     }
 
 
-{-| The cursor indicates something is to be moved.
+{-| <span style="cursor: move;">The cursor indicates something is to be moved.</span>
 
     cursor move
 
@@ -178,7 +178,7 @@ move =
     }
 
 
-{-| The cursor indicates that an edge of a box is to be moved up (north).
+{-| <span style="cursor: n-resize;">The cursor indicates that an edge of a box is to be moved up (north).</span>
 
     cursor nResize
 
@@ -190,7 +190,7 @@ nResize =
     }
 
 
-{-| The cursor indicates that an edge of a box is to be moved up and right (.north/east)
+{-| <span style="cursor: ne-resize;">The cursor indicates that an edge of a box is to be moved up and right (.north/east)</span>
 
     cursor neResize
 
@@ -202,7 +202,7 @@ neResize =
     }
 
 
-{-| Indicates a bidirectional resize cursor.
+{-| <span style="cursor: nesw-resize;">Indicates a bidirectional resize cursor.</span>
 
     cursor neswResize
 
@@ -214,7 +214,7 @@ neswResize =
     }
 
 
-{-| Indicates a bidirectional resize cursor.
+{-| <span style="cursor: ns-resize;">Indicates a bidirectional resize cursor.</span>
 
     cursor nsResize
 
@@ -226,7 +226,7 @@ nsResize =
     }
 
 
-{-| The cursor indicates that an edge of a box is to be moved up and left (.north/west)
+{-| <span style="cursor: nw-resize;">The cursor indicates that an edge of a box is to be moved up and left (.north/west)</span>
 
     cursor nwResize
 
@@ -238,7 +238,7 @@ nwResize =
     }
 
 
-{-| Indicates a bidirectional resize cursor.
+{-| <span style="cursor: nwse-resize;">Indicates a bidirectional resize cursor.</span>
 
     cursor nwseResize
 
@@ -250,7 +250,7 @@ nwseResize =
     }
 
 
-{-| The cursor indicates that the dragged item cannot be dropped here.
+{-| <span style="cursor: no-drop;">The cursor indicates that the dragged item cannot be dropped here.</span>
 
     cursor noDrop
 
@@ -262,7 +262,7 @@ noDrop =
     }
 
 
-{-| The cursor indicates that the requested action will not be executed.
+{-| <span style="cursor: not-allowed;">The cursor indicates that the requested action will not be executed.</span>
 
     cursor notAllowed
 
@@ -274,7 +274,7 @@ notAllowed =
     }
 
 
-{-| The cursor is a pointer and indicates a link.
+{-| <span style="cursor: pointer;">The cursor is a pointer and indicates a link.</span>
 
     cursor pointer
 
@@ -286,7 +286,7 @@ pointer =
     }
 
 
-{-| The cursor indicates that the program is busy (in progress).
+{-| <span style="cursor: progress;">The cursor indicates that the program is busy (in progress).</span>
 
     cursor progress
 
@@ -298,7 +298,7 @@ progress =
     }
 
 
-{-| The cursor indicates that the row can be resized vertically.
+{-| <span style="cursor: row-resize;">The cursor indicates that the row can be resized vertically.</span>
 
     cursor rowResize
 
@@ -310,7 +310,7 @@ rowResize =
     }
 
 
-{-| The cursor indicates that an edge of a box is to be moved down (south).
+{-| <span style="cursor: s-resize;">The cursor indicates that an edge of a box is to be moved down (south).</span>
 
     cursor sResize
 
@@ -322,7 +322,7 @@ sResize =
     }
 
 
-{-| The cursor indicates that an edge of a box is to be moved down and right (.south/east)
+{-| <span style="cursor: se-resize;">The cursor indicates that an edge of a box is to be moved down and right (.south/east)</span>
 
     cursor seResize
 
@@ -334,7 +334,7 @@ seResize =
     }
 
 
-{-| The cursor indicates that an edge of a box is to be moved down and left (.south/west)
+{-| <span style="cursor: sw-resize;">The cursor indicates that an edge of a box is to be moved down and left (.south/west)</span>
 
     cursor swResize
 
@@ -346,7 +346,7 @@ swResize =
     }
 
 
-{-| The cursor indicates text that may be selected.
+{-| <span style="cursor: text;">The cursor indicates text that may be selected.</span>
 
     cursor text
 
@@ -358,7 +358,7 @@ text =
     }
 
 
-{-| The cursor indicates vertical-text that may be selected.
+{-| <span style="cursor: vertical-text;">The cursor indicates vertical-text that may be selected.</span>
 
     cursor verticalText
 
@@ -370,7 +370,7 @@ verticalText =
     }
 
 
-{-| The cursor indicates that an edge of a box is to be moved left (west).
+{-| <span style="cursor: w-resize;">The cursor indicates that an edge of a box is to be moved left (west).</span>
 
     cursor wResize
 
@@ -382,7 +382,7 @@ wResize =
     }
 
 
-{-| The cursor indicates that the program is busy.
+{-| <span style="cursor: wait;">The cursor indicates that the program is busy.</span>
 
     cursor wait
 
@@ -394,7 +394,7 @@ wait =
     }
 
 
-{-| The cursor indicates that something can be zoomed in.
+{-| <span style="cursor: zoom-in;">The cursor indicates that something can be zoomed in.</span>
 
     cursor zoomIn
 
@@ -406,7 +406,7 @@ zoomIn =
     }
 
 
-{-| The cursor indicates that something can be zoomed out.
+{-| <span style="cursor: zoom-out;">The cursor indicates that something can be zoomed out.</span>
 
     cursor zoomOut
 
