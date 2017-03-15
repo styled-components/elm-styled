@@ -59,6 +59,17 @@ concatOtherRule parentSelector rule =
             createCss (parentSelector ++ selector) rules
                 |> String.join " "
 
+        Media query rules ->
+            createCss (parentSelector) rules
+                |> String.join " "
+                |> (\css ->
+                        "@media "
+                            ++ query
+                            ++ " { "
+                            ++ css
+                            ++ " } "
+                   )
+
 
 createCss : String -> List Rule -> List String
 createCss selector rules =

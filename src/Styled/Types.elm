@@ -76,6 +76,7 @@ type Compatible
 type Rule
     = Declaration String (List String) Bool
     | Selector String (List Rule)
+    | Media String (List Rule)
 
 
 {-| -}

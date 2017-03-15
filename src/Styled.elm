@@ -3,6 +3,7 @@ module Styled
         ( declaration
           -- Misc
         , styled
+        , media
         , important
           -- Properties
           -- Animation Properties
@@ -429,7 +430,7 @@ module Styled
 {-|
 
 # Misc
-@docs styled, important
+@docs styled, media, important
 
 
 # Properties
@@ -680,6 +681,19 @@ styled node rules properties children =
             nodeWithClassName
 
 
+{-| Apply a media query to a set of rules.
+
+    media "(min-height: 10px)"
+        [ backgroundColor blue
+        , color red
+        ]
+
+-}
+media : String -> List Rule -> Rule
+media =
+    Media
+
+
 {-| Append `!important` to a declaration. You should only use important in special cases.
 
     borderColor black |> important
@@ -691,8 +705,11 @@ important rule =
         Declaration property values _ ->
             Declaration property values True
 
-        _ ->
-            rule
+        Selector selector rules ->
+            Selector selector (List.map important rules)
+
+        Media query rules ->
+            Media query (List.map important rules)
 
 
 
