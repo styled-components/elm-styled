@@ -2,7 +2,6 @@ module Styled.Gradients exposing (..)
 
 {-|
 
-
 This module is used to create CSS gradients.
 
 # Color Stops
