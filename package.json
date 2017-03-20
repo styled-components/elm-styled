@@ -1,0 +1,19 @@
+{
+  "name": "elm-styled",
+  "description": "Styling your Html elements with typed CSS in Elm",
+  "repository": "https://github.com/styled-components/elm-styled.git",
+  "author": "Konstantin Pschera <me@kons.ch>",
+  "license": "MIT",
+  "devDependencies": {
+    "elm": "0.18.0",
+    "elm-format": "0.5.2",
+    "eslint": "3.18.0",
+    "husky": "0.13.2",
+    "jest": "19.0.2",
+    "lint-staged": "3.4.0"
+  },
+  "scripts": {
+  	"precommit": "lint-staged",
+  	"lint": "eslint src && elm-make --warn --output=/dev/null src/**/*.elm"
+  }
+}

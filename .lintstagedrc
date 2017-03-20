@@ -1,0 +1,13 @@
+{
+    "linters": {
+        "*.js": [
+            "eslint --fix",
+            "git add"
+        ],
+        "*.elm": [
+        	"elm-format --yes",
+        	"git add",
+        	"elm-make --warn --output=/dev/null"
+        ]
+    }
+}
