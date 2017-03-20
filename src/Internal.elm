@@ -1,21 +1,7 @@
 module Internal exposing (..)
 
-import Native.Css
 import Murmur3 exposing (hashString)
 import Styled.Types exposing (..)
-import Json.Encode as Json
-
-
-injectCss : String -> List String -> Bool
-injectCss scope rules =
-    let
-        injectedCss =
-            rules
-                |> List.map Json.string
-                |> Json.list
-                |> Native.Css.inject scope
-    in
-        True
 
 
 isDeclaration : Rule -> Bool

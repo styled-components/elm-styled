@@ -635,9 +635,10 @@ module Styled
 -}
 
 import Html.Attributes
-import VirtualDom exposing (Node, Property)
-import Styled.Types exposing (..)
 import Internal
+import Native.Css
+import Styled.Types exposing (..)
+import VirtualDom exposing (Node, Property)
 
 
 {-
@@ -676,8 +677,8 @@ styled node rules properties children =
             css =
                 Internal.createCss ("." ++ className) rules
 
-            injectedCss =
-                Internal.injectCss className css
+            insertedCss =
+                List.map Native.Css.insert css
         in
             nodeWithClassName
 
