@@ -32,4 +32,4 @@ loader =
 
 
 main =
-    loader [] [ text "< 💅 >" ]
+    loader [] [ text "[ 💅 ]" ]

@@ -1,5 +1,5 @@
 <a href="https://github.com/styled-components/elm-styled">
-    <img alt="elm-styled logo" src="https://cdn.rawgit.com/styled-components/elm-styled/f515f0cc/assets/logo.png" height="150px" />
+    <img alt="elm-styled logo" src="https://cdn.rawgit.com/styled-components/elm-styled/master/assets/logo.png" height="150px" />
 </a>
 
 Use typed CSS inside your Elm files to style your Html elements.
@@ -165,9 +165,9 @@ loader =
 
 
 main =
-    loader [] [ text "< 💅 >" ]
+    loader [] [ text "[ 💅 ]" ]
 ```
 
 <div align="center">
-    <img alt="Screenshot of the above code ran in a browser 💅" src="https://zippy.gfycat.com/EmbellishedWelllitAyeaye.gif" width="324px" />
+    <img alt="Screenshot of the above code ran in a browser 💅" src="https://zippy.gfycat.com/DevotedHeavenlyGoldenretriever.gif" width="113px" />
 </div>
