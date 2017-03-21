@@ -13,7 +13,13 @@
     "lint-staged": "3.4.0"
   },
   "scripts": {
-  	"precommit": "lint-staged",
-  	"lint": "eslint src && elm-make --warn --output=/dev/null src/**/*.elm"
+    "precommit": "lint-staged",
+    "lint": "eslint {src,test} && elm-make --warn --output=/dev/null {src,test}/**/*.elm",
+    "test": "jest"
+  },
+  "jest": {
+    "testMatch": [
+      "**/test/**/*.js"
+    ]
   }
 }

@@ -1,6 +1,10 @@
 // eslint-disable-next-line no-unused-vars
 var _styled_components$elm_styled$Native_Css = (function () {
-	var stringHash = function stringHash(string) {
+	var styleTags = []
+	var insertedRules = {}
+	var maxLength = 65000
+
+	function stringHash(string) {
 		var hash = 5381
 		var index = string.length
 
@@ -11,7 +15,7 @@ var _styled_components$elm_styled$Native_Css = (function () {
 		return hash >>> 0
 	}
 
-	var createStyleSheet = function createStyleSheet() {
+	function insertStyleSheet() {
 		// Create the <style> tag
 		var style = document.createElement('style')
 
@@ -21,26 +25,24 @@ var _styled_components$elm_styled$Native_Css = (function () {
 		// Add the <style> element to the page
 		document.head.appendChild(style)
 
-		return style.sheet
+		styleTags.push(style)
+
+		return style
 	}
 
-	var oldIE = (function () {
-		var div = document.createElement('div')
-		div.innerHTML = '<!--[if lt IE 10]><i></i><![endif]-->'
-		return div.getElementsByTagName('i').length === 1
-	})()
 
-	var maxLength = oldIE ? 4000 : 65000
-	var ctr = 0
+	function getSheet() {
+		var styleTag = styleTags[styleTags.length - 1] || insertStyleSheet()
+		var sheet = styleTag.sheet
 
-	var sheets = [createStyleSheet()]
+		if (sheet.cssRules.length < maxLength) {
+			return sheet
+		}
 
-	var getSheet = function getSheet() {
-		return sheets[sheets.length - 1]
+		return insertStyleSheet().sheet
 	}
 
-	var insertedRules = {}
-	var insert = function insert(rule) {
+	function insert(rule) {
 		var hash = stringHash(rule)
 
 		if (!insertedRules[hash]) {
@@ -58,14 +60,24 @@ var _styled_components$elm_styled$Native_Css = (function () {
 				console.warn('Illegal rule inserted. Please report a bug at https://github.com/styled-components/elm-styled and include the following error message', rule)
 			}
 		}
+	}
 
-		if (ctr++ % maxLength === 0) {
-			sheets.push(createStyleSheet())
-		}
+	function flush() {
+		styleTags.forEach(function (node) {
+			node.parentNode.removeChild(node)
+		})
 
+		styleTags = []
+		insertedRules = {}
 	}
 
 	return {
-		insert: insert
+		insert: insert,
+		flush: flush
 	}
 })()
+
+if (typeof module !== 'undefined') {
+	// eslint-disable-next-line no-undef
+	module.exports = _styled_components$elm_styled$Native_Css
+}

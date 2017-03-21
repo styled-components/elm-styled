@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`inserting styles should insert @import rules at the top 1`] = `
+"@import url(https://example.org);
+.footer {font-size: 2rem;}
+.box {font-size: 2rem;}"
+`;
+
+exports[`inserting styles should insert a rule 1`] = `
+".header {font-size: 2rem;}
+.text {font-size: 1.5rem;}"
+`;
+
+exports[`inserting styles should use a second stylesheet for many rules 1`] = `
+".class-65000 {font-size: 2rem;}
+.class-65001 {font-size: 2rem;}
+.class-65002 {font-size: 2rem;}
+.class-65003 {font-size: 2rem;}
+.class-65004 {font-size: 2rem;}
+.class-65005 {font-size: 2rem;}
+.class-65006 {font-size: 2rem;}
+.class-65007 {font-size: 2rem;}
+.class-65008 {font-size: 2rem;}
+.class-65009 {font-size: 2rem;}"
+`;
