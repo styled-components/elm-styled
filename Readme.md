@@ -1,3 +1,6 @@
+> **Unreleased!** At the moment I can't release this package to the elm package manager because it is [using Native code](https://github.com/styled-components/elm-styled/issues/14). If you still want to expirement with it you can install it directly from GitHub. ❤️
+
+
 <a href="https://github.com/styled-components/elm-styled">
     <img alt="elm-styled logo" src="https://cdn.rawgit.com/styled-components/elm-styled/master/assets/logo.png" height="150px" />
 </a>
