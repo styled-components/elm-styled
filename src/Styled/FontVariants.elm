@@ -189,7 +189,7 @@ titlingCaps =
 -- Font Variant East Asian
 
 
-{-| This keyword forces the use of special glyphs for ruby characters. As these are usually smaller, font creators often designs specific forms, usually sli htly bolder to improve the contrast. This keyword corresponds to the OpenType values ruby.
+{-| This keyword forces the use of special glyphs for ruby characters. As these are usually smaller, font creators often designs specific forms, usually slightly bolder to improve the contrast. This keyword corresponds to the OpenType values ruby.
 
     fontVariantEastAsian ruby
 
