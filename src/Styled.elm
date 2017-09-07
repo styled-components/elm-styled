@@ -3231,7 +3231,7 @@ transformStyle =
 
     transition <delay> <duration> <property> <timing-function>
 
-    transition (ms 100) (s 1) all ease
+    transition (ms 100) (s 1) all_ ease
 
 -}
 transition :
