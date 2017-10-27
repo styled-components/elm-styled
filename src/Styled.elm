@@ -2299,6 +2299,7 @@ listStylePosition =
 
 {-| Specifies the marker style for a list-item. [`list-style-type`](https://developer.mozilla.org/en-US/docs/Web/CSS/list-style-type)
 
+    listStyleType none
     listStyleType disc
     listStyleType circle
     listStyleType decimal
