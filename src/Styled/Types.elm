@@ -226,7 +226,7 @@ type alias PositionShorthand compatible =
     }
 
 
-{-| Repesents the CSS data type [`<string>`](https://developer.mozilla.org/en-US/docs/Web/CSS/string).
+{-| Represents the CSS data type [`<string>`](https://developer.mozilla.org/en-US/docs/Web/CSS/string).
 -}
 type alias Str compatible =
     { compatible
@@ -237,7 +237,7 @@ type alias Str compatible =
     }
 
 
-{-| Repesents the CSS data type [`<time>`](https://developer.mozilla.org/en-US/docs/Web/CSS/time).
+{-| Represents the CSS data type [`<time>`](https://developer.mozilla.org/en-US/docs/Web/CSS/time).
 -}
 type alias Time compatible =
     { compatible
@@ -246,7 +246,7 @@ type alias Time compatible =
     }
 
 
-{-| Repesents the CSS data type [`<timing-function>`](https://developer.mozilla.org/en-US/docs/Web/CSS/timing-function).
+{-| Represents the CSS data type [`<timing-function>`](https://developer.mozilla.org/en-US/docs/Web/CSS/timing-function).
 -}
 type alias TimingFunction compatible =
     { compatible
@@ -255,7 +255,7 @@ type alias TimingFunction compatible =
     }
 
 
-{-| Repesents the CSS data type [`<transform-function>`](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function).
+{-| Represents the CSS data type [`<transform-function>`](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function).
 
     type TransformFunction
         = TransformFunction
@@ -268,7 +268,7 @@ type alias TransformFunction compatible =
     }
 
 
-{-| Repesents the CSS data type [`<url>`](https://developer.mozilla.org/en-US/docs/Web/CSS/url).
+{-| Represents the CSS data type [`<url>`](https://developer.mozilla.org/en-US/docs/Web/CSS/url).
 -}
 type alias Url compatible =
     { compatible
