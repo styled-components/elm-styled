@@ -3660,7 +3660,7 @@ hex value =
 rgb : Int -> Int -> Int -> Color {}
 rgb red green blue =
     createColor
-        ("rgba("
+        ("rgb("
             ++ (toString red)
             ++ ", "
             ++ (toString green)
